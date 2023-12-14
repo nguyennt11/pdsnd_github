@@ -9,24 +9,7 @@ MONTHS = ('january', 'february', 'march', 'april', 'may', 'june')
 WEEKDAYS = ('monday', 'tuesday', 'wednesday',
             'thursday', 'friday', 'saturday', 'sunday')
 
-def get_filters():
-    """
-    Asks user to specify a city, month, and day to analyze.
 
-    Returns:
-        (str) city - name of the city to analyze
-        (str) month - name of the month to filter by, or "all" to apply no month filter
-        (str) day - name of the day of week to filter by, or "all" to apply no day filter
-    """
-    print('Hello! Let\'s explore some US bikeshare data!')
-    # TO DO: get user input for city (chicago, new york city, washington). HINT: Use a while loop to handle invalid inputs
-    while True:
-        city = select(f'Select city to do analysis {CITY_DATA.keys()}: ', CITY_DATA.keys())
-        month = select(f'Select month {MONTHS}: ', MONTHS)
-        day = select(f'Select day {WEEKDAYS}: ', WEEKDAYS)
-        break
-
-    return city, month, day
 
 def select(userInput, options):
     """
@@ -194,6 +177,25 @@ def user_stats(df):
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
 
+
+def get_filters():
+    """
+    Asks user to specify a city, month, and day to analyze.
+
+    Returns:
+        (str) city - name of the city to analyze
+        (str) month - name of the month to filter by, or "all" to apply no month filter
+        (str) day - name of the day of week to filter by, or "all" to apply no day filter
+    """
+    print('Hello! Let\'s explore some US bikeshare data!')
+    # TO DO: get user input for city (chicago, new york city, washington). HINT: Use a while loop to handle invalid inputs
+    while True:
+        city = select(f'Select city to do analysis {CITY_DATA.keys()}: ', CITY_DATA.keys())
+        month = select(f'Select month {MONTHS}: ', MONTHS)
+        day = select(f'Select day {WEEKDAYS}: ', WEEKDAYS)
+        break
+
+    return city, month, day
 
 def main():
     while True:
