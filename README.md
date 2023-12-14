@@ -18,6 +18,8 @@ In this project, you will use data provided by Motivate, a bike share system pro
     new_york_city.csv
     washington.csv
 ```
+### Running Guide
+Run command `python bikeshare_2.py`
 
 ### Credits
 N/A
